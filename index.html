@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="ScholScan: Paper Replication & Dataset Repository">
+  <meta property="og:title" content="ScholScan"/>
+  <meta property="og:description" content="Dataset, embeddings, evaluation scripts, and inference pipelines for paper replication and RAG experiments across image and text modalities."/>
+  <!-- TODO: Update project page URL if needed -->
+  <meta property="og:url" content="https://github.com/Staudinger0325/ScholScan"/>
+  <!-- Banner image, optimal dimensions are ~1200x630 -->
+  <meta property="og:image" content="static/images/overview.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="ScholScan">
+  <meta name="twitter:description" content="Paper Replication & Dataset Repository (image/text, main + RAG).">
+  <meta name="twitter:image" content="static/images/overview.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="keywords" content="ScholScan, Paper Replication, Dataset, RAG, Multimodal, Retrieval-Augmented Generation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ScholScan</title>
+  <link rel="icon" type="image/png" href="static/images/overview.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">ScholScan</h1>
+            <h2 class="title is-4">Paper Replication & Dataset Repository</h2>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Anonymous Authors</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/0x7ajsncjansg/ScholScan" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-database"></i></span>
+                    <span>Dataset</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/Staudinger0325/ScholScan" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#paper" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="far fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image carousel -->
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img src="static/images/overview.png" alt="ScholScan Overview"/>
+            <h2 class="subtitle has-text-centered">
+              <strong>Overview:</strong> End-to-end materials for paper replication, including dataset, evaluation scripts, and inference pipelines.
+            </h2>
+          </div>
+
+          <div class="item">
+            <img src="static/images/taxonomy.png" alt="ScholScan Taxonomy"/>
+            <h2 class="subtitle has-text-centered">
+              <strong>Taxonomy:</strong> Organization of tasks/modalities and experiment settings (main results and RAG variants).
+            </h2>
+          </div>
+
+          <div class="item">
+            <img src="static/images/results.png" alt="ScholScan Results"/>
+            <h2 class="subtitle has-text-centered">
+              <strong>Results:</strong> Aggregated evaluation results across models and settings.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+
+  <!-- Abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              <strong>ScholScan</strong> provides all the necessary materials for replicating experiments, including the dataset, precomputed embeddings,
+              evaluation scripts, and inference pipelines. It supports both <strong>main results</strong> and <strong>retrieval-augmented generation (RAG)</strong>
+              experiments across <strong>image</strong> and <strong>text</strong> modalities.
+            </p>
+            <p>
+              Due to storage constraints, large data artifacts may be hosted externally (e.g., Hugging Face). Please refer to the repository README for details.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End abstract -->
+
+  <!-- Paper -->
+  <section class="hero is-small is-light" id="paper">
+    <div class="hero-body">
+      <div class="container">
+        <h2 class="title">Paper</h2>
+        <div id="paper-placeholder" class="content">
+          <p>
+            Place the paper PDF at <code>static/pdfs/ScholScan.pdf</code> to enable inline viewing.
+          </p>
+          <p>
+            <a href="static/pdfs/ScholScan.pdf" target="_blank" rel="noopener">Open PDF</a>
+          </p>
+        </div>
+        <iframe id="paper-iframe" src="static/pdfs/ScholScan.pdf" width="100%" height="1500" style="display:none"></iframe>
+      </div>
+    </div>
+  </section>
+  <!-- End paper -->
+
+  <!-- BibTeX -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code></code></pre>
+    </div>
+  </section>
+  <!-- End BibTeX -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+              <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
