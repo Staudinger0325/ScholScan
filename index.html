@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="ScholScan: Paper Replication & Dataset Repository">
-  <meta property="og:title" content="ScholScan"/>
-  <meta property="og:description" content="Dataset, embeddings, evaluation scripts, and inference pipelines for paper replication and RAG experiments across image and text modalities."/>
+  <meta name="description" content="Not Search, But Scan: Benchmarking MLLMs on Scan-Oriented Academic Paper Reasoning">
+  <meta property="og:title" content="Not Search, But Scan: Benchmarking MLLMs on Scan-Oriented Academic Paper Reasoning"/>
+  <meta property="og:description" content="ScholScan: a scan-oriented benchmark for scholarly paper reasoning."/>
   <!-- TODO: Update project page URL if needed -->
   <meta property="og:url" content="https://github.com/Staudinger0325/ScholScan"/>
   <!-- Banner image, optimal dimensions are ~1200x630 -->
@@ -12,15 +12,15 @@
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
-  <meta name="twitter:title" content="ScholScan">
-  <meta name="twitter:description" content="Paper Replication & Dataset Repository (image/text, main + RAG).">
+  <meta name="twitter:title" content="Not Search, But Scan">
+  <meta name="twitter:description" content="ScholScan: scan-oriented academic paper reasoning benchmark.">
   <meta name="twitter:image" content="static/images/overview.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <meta name="keywords" content="ScholScan, Paper Replication, Dataset, RAG, Multimodal, Retrieval-Augmented Generation">
+  <meta name="keywords" content="ScholScan, Scan-Oriented, Academic Paper Reasoning, Benchmark, MLLMs, ICLR 2026">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ScholScan</title>
+  <title>Not Search, But Scan</title>
   <link rel="icon" type="image/png" href="static/images/overview.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
@@ -44,17 +44,38 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">ScholScan</h1>
-            <h2 class="title is-4">Paper Replication & Dataset Repository</h2>
+            <h1 class="title is-1 publication-title">Not Search, But Scan: Benchmarking MLLMs on Scan-Oriented Academic Paper Reasoning</h1>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Anonymous Authors</span>
+              <span class="author-block">Rongjin Li<sup>1</sup>,</span>
+              <span class="author-block">Zichen Tang<sup>1</sup>,</span>
+              <span class="author-block">Xianghe Wang<sup>1</sup>,</span>
+              <span class="author-block">Xinyi Hu<sup>1</sup>,</span>
+              <span class="author-block">Zhengyu Wang<sup>1</sup>,</span>
+              <br>
+              <span class="author-block">Zhengyu Lu<sup>1</sup>,</span>
+              <span class="author-block">Yiling Huang<sup>1</sup>,</span>
+              <span class="author-block">Jiayuan Chen<sup>1</sup>,</span>
+              <span class="author-block">Weisheng Tan<sup>1</sup>,</span>
+              <span class="author-block">Jiacheng Liu<sup>1</sup>,</span>
+              <br>
+              <span class="author-block">Zhongjun Yang<sup>1</sup>,</span>
+              <span class="author-block">Haihong E<sup>1*</sup></span>
+            </div>
+
+            <div class="is-size-6 publication-authors" style="margin-top: 10px;">
+              <span class="author-block"><sup>1</sup>Beijing University of Posts and Telecommunications</span><br>
+              <span class="eql-cntrb"><small><sup>*</sup>Corresponding author.</small></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><strong style="color: red;">ICLR 2026</strong></span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="https://huggingface.co/datasets/0x7ajsncjansg/ScholScan" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://huggingface.co/datasets/Staudinger/ScholScan" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-database"></i></span>
                     <span>Dataset</span>
                   </a>
@@ -88,23 +109,14 @@
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
             <img src="static/images/overview.png" alt="ScholScan Overview"/>
-            <h2 class="subtitle has-text-centered">
-              <strong>Overview:</strong> End-to-end materials for paper replication, including dataset, evaluation scripts, and inference pipelines.
-            </h2>
           </div>
 
           <div class="item">
             <img src="static/images/taxonomy.png" alt="ScholScan Taxonomy"/>
-            <h2 class="subtitle has-text-centered">
-              <strong>Taxonomy:</strong> Organization of tasks/modalities and experiment settings (main results and RAG variants).
-            </h2>
           </div>
 
           <div class="item">
             <img src="static/images/results.png" alt="ScholScan Results"/>
-            <h2 class="subtitle has-text-centered">
-              <strong>Results:</strong> Aggregated evaluation results across models and settings.
-            </h2>
           </div>
         </div>
       </div>
@@ -120,12 +132,17 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              <strong>ScholScan</strong> provides all the necessary materials for replicating experiments, including the dataset, precomputed embeddings,
-              evaluation scripts, and inference pipelines. It supports both <strong>main results</strong> and <strong>retrieval-augmented generation (RAG)</strong>
-              experiments across <strong>image</strong> and <strong>text</strong> modalities.
-            </p>
-            <p>
-              Due to storage constraints, large data artifacts may be hosted externally (e.g., Hugging Face). Please refer to the repository README for details.
+              With the rapid progress of multimodal large language models (MLLMs), AI already performs well at literature retrieval and certain reasoning tasks,
+              serving as a capable assistant to human researchers, yet it remains far from autonomous research. The fundamental reason is that current work on
+              scholarly paper reasoning is largely confined to a search-oriented paradigm centered on pre-specified targets, with reasoning grounded in relevance
+              retrieval, which struggles to support researcher-style full-document understanding, reasoning, and verification. To bridge this gap, we propose
+              ScholScan, a new benchmark for scholarly paper reasoning. ScholScan introduces a scan-oriented task setting that asks models to read and cross-check
+              entire papers like human researchers, scanning the document to identify consistency issues. The benchmark comprises 1,800 carefully annotated
+              questions drawn from 9 error families across 13 natural-science domains and 715 papers, and provides detailed annotations for evidence localization
+              and reasoning traces, together with a unified evaluation protocol. We assessed 15 models across 24 input configurations and conduct a fine-grained
+              analysis of MLLM capabilities across error families. Across the board, retrieval-augmented generation (RAG) methods yield no significant improvements,
+              revealing systematic deficiencies of current MLLMs on scan-oriented tasks and underscoring the challenge posed by ScholScan. We expect ScholScan to be
+              the leading and representative work of the scan-oriented task paradigm.
             </p>
           </div>
         </div>
@@ -139,15 +156,7 @@
     <div class="hero-body">
       <div class="container">
         <h2 class="title">Paper</h2>
-        <div id="paper-placeholder" class="content">
-          <p>
-            Place the paper PDF at <code>static/pdfs/ScholScan.pdf</code> to enable inline viewing.
-          </p>
-          <p>
-            <a href="static/pdfs/ScholScan.pdf" target="_blank" rel="noopener">Open PDF</a>
-          </p>
-        </div>
-        <iframe id="paper-iframe" src="static/pdfs/ScholScan.pdf" width="100%" height="1500" style="display:none"></iframe>
+        <iframe src="static/pdfs/ScholScan.pdf" width="100%" height="1500"></iframe>
       </div>
     </div>
   </section>
